@@ -150,7 +150,7 @@
     {{- $options = dict "minify" true | merge $options -}}
     {{- $js := resources.Get "js/lib/abcjs.js" | js.Build $options -}}
     {{- $_ := $js.RelPermalink -}}
-    {{- dict "Link" $js.RelPermalink "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "partial "scratch/script.html" -}}
+    {{- dict "Link" $js.RelPermalink "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
 
 {{- /* ECharts */ -}}
