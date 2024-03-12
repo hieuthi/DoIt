@@ -1,0 +1,4 @@
+{{- $content := .Inner -}}
+{{- $id := dict "Content" $content "Scratch" .Page.Scratch | partial "function/id.html" -}}
+<div class="abcjs" id="{{ $id }}" >{{ $content }}</div>
+{{- .Page.Scratch.SetInMap "this" "abcjs" true -}}

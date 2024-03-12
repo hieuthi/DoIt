@@ -138,6 +138,21 @@
 </script>
 {{- end -}}
 
+{{- /* ABCJS */ -}}
+{{- if (.Scratch.Get "this").abcjs -}}
+    {{- $options := dict -}}
+    {{- $source := "lib/abcjs/abcjs-basic-min.js" -}}
+    {{- dict "Source" $source "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/pjaxScript.html" -}}
+    {{- $shims := dict "abcjs" "js/shims/abcjs.js" -}}
+    {{- $options = dict "shims" $shims | merge $options -}}
+    {{- $config = dict "abcjs" true | merge $config -}}
+    {{- $options = dict "targetPath" "js/abcjs-basic-min.js" | merge $options -}}
+    {{- $options = dict "minify" true | merge $options -}}
+    {{- $js := resources.Get "js/lib/abcjs.js" | js.Build $options -}}
+    {{- $_ := $js.RelPermalink -}}
+    {{- dict "Link" $js.RelPermalink "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/pjaxScript.html" -}}
+{{- end -}}
+
 {{- /* ECharts */ -}}
 {{- if (.Scratch.Get "this").echarts -}}
     {{- $config = dict "echarts" true | merge $config -}}
