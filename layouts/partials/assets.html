@@ -143,11 +143,11 @@
     {{- $config = dict "abcjs" true | merge $config -}}
     {{- $options := dict -}}
     {{- $shims := dict "abcjs" "js/shims/abcjs.js" -}}
-    {{- $options = dict "targetPath" "js/abcjs-basic-min.js" | merge $options -}}
+    {{- $options = dict "targetPath" "js/abcjs-basic-min.min.js" | merge $options -}}
     {{- $options = dict "minify" true | merge $options -}}
     {{- $options = dict "sourceMap" "inline" | merge $options -}}
 
-    {{- $source := $cdn.abcjs | default "lib/abcjs/abcjs-basic-min.js" -}}
+    {{- $source := $cdn.abcjs | default "lib/abcjs/abcjs-basic-min.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- $options = dict "shims" $shims | merge $options -}}
 

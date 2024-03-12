@@ -116,8 +116,8 @@
             "version": "6.3.0",
             "files": [
                 {
-                    "remote": "dist/abcjs-basic-min.js",
-                    "local": "abcjs/abcjs-basic-min.js"
+                    "remote": "dist/abcjs-basic-min.min.js",
+                    "local": "abcjs/abcjs-basic-min.min.js"
                 }
             ]
         }
