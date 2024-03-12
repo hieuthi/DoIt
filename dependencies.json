@@ -110,6 +110,16 @@
                     "local": "artalk/artalk-plugin-lightbox.js"
                 }
             ]
+        },
+        {
+            "name": "abcjs",
+            "version": "6.3.0",
+            "files": [
+                {
+                    "remote": "dist/abcjs-basic-min.js",
+                    "local": "abcjs/abcjs-basic-min.js"
+                }
+            ]
         }
     ]
 }
