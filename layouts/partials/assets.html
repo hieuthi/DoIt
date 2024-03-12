@@ -139,7 +139,7 @@
 {{- end -}}
 
 {{- /* ABCJS */ -}}
-{{- if (.Scratch.Get "this").abcjs -}}
+{{- /* if (.Scratch.Get "this").abcjs */ -}}
     {{- $config = dict "abcjs" true | merge $config -}}
     {{- $options := dict -}}
     {{- $shims := dict "abcjs" "js/shims/abcjs.js" -}}
@@ -154,7 +154,7 @@
     {{- $js := resources.Get "js/lib/abcjs.js" | js.Build $options -}}
     {{- $_ := $js.RelPermalink -}}
     {{- dict "Link" $js.RelPermalink "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
-{{- end -}}
+{{- /* end */ -}}
 
 {{- /* ECharts */ -}}
 {{- if (.Scratch.Get "this").echarts -}}
